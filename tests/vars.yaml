@@ -1,0 +1,7 @@
+---
+reader_user_DN: username
+reader_user_password: password
+search_base: OU=AdminView,dc=example,dc=org
+module_DN_template: CN={},OU=modules,OU=AdminView,dc=example,dc=org
+url: ldaps://example.org
+scope: 2
