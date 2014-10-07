@@ -21,7 +21,7 @@ $ python setup.py install
 
 Cd to the cloned directory:
 ```
-$ p2 jinyaml.py tests/vars.yaml  tests/template.j2 tests/result
+$ jinyaml tests/vars.yaml  tests/template.j2 tests/result
 ```
 
 ## Using as an API
