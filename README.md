@@ -6,7 +6,7 @@ A library to format Jinja2 templates based on a YAML configuration file.
 There are some cases, when you want to create files based on templates.
 Jinja2 is often used by developers as a template language and YAML is prevalent as a configuration file format.
 
-This tool can be used to read variables from a YAML file (or command line) and substitute them into a template file.
+This tool can be used to read variables from one or more YAML files (or the command line with the `-d` switch) and substitute them into a template file.
 
 ## Installation
 

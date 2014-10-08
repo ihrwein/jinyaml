@@ -10,7 +10,7 @@ def __parse_cli_args():
          description='Creates files using Jinja2 templates based on a YAML configuration')
     parser.add_argument('-d', '--dict', type=json.loads,
         help='Some user defined variables in a JSON dictionary')
-    parser.add_argument('-y', '--yaml', type=str,
+    parser.add_argument('-y', '--yaml', type=str, nargs='*',
         help='A YAML file wich contains variables')
     parser.add_argument('template_file', type=str, nargs=1,
         help='The Jinja2 template file')
@@ -40,10 +40,14 @@ def __load_template(template_file):
 def __load_variables(yaml_file, additional_vars):
     vars = {}
     
-    if yaml_file:
-        __fail_when_file_doesnot_exist(yaml_file, "The YAML file does not exist")
-        with open(yaml_file, 'r') as stream:
-            vars = yaml.load(stream)
+    if len(yaml_file) > 0:
+
+        for f in yaml_file:
+            if not os.path.isfile(f):
+                print("YAML file {0} does not exist, skipping.", f)
+            else:
+                with open(f, 'r') as stream:
+                    vars.update(yaml.load(stream))
     
     if additional_vars:
        vars.update(additional_vars)
