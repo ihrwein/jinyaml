@@ -12,10 +12,10 @@ This tool can be used to read variables from a YAML file (or command line) and s
 
 These command will install `jinyaml` and its dependencies.
 ```
-$ git clone https://github.com/ihrwein/jinyaml.git
-$ cd jinyaml
-$ python setup.py install 
+$ pip install git+git://github.com/ihrwein/jinyaml
 ```
+
+You will need a C compiler to install it.
 
 ## Usage
 
