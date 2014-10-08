@@ -40,7 +40,7 @@ def __load_template(template_file):
 def __load_variables(yaml_file, additional_vars):
     vars = {}
     
-    if len(yaml_file) > 0:
+    if yaml_file and len(yaml_file) > 0:
 
         for f in yaml_file:
             if not os.path.isfile(f):
