@@ -32,7 +32,7 @@ def __fail_when_file_doesnot_exist(path, error_message):
 def __load_template(template_file):
     __fail_when_file_doesnot_exist(template_file, "The template file does not exist")
 
-    templateLoader = jinja2.FileSystemLoader( searchpath="." )
+    templateLoader = jinja2.FileSystemLoader( searchpath=[".", "/"] )
     templateEnv = jinja2.Environment( loader=templateLoader )
     template = templateEnv.get_template( template_file )
     return template
