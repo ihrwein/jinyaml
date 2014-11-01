@@ -8,8 +8,8 @@ import json
 def __parse_cli_args():
     parser = argparse.ArgumentParser(
          description='Creates files using Jinja2 templates based on a YAML configuration')
-    parser.add_argument('-d', '--dict', type=json.loads,
-        help='Some user defined variables in a JSON dictionary')
+    parser.add_argument('-d', '--dict', type=yaml.load,
+        help='Some user defined variables in a YAML dictionary')
     parser.add_argument('-y', '--yaml', type=str, nargs='*',
         help='A YAML file wich contains variables')
     parser.add_argument('template_file', type=str, nargs=1,
